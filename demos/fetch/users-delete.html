@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Users Create</title>
+  </head>
+  <body>
+    <main></main>
+    <script>
+      "use strict";
+
+      let user = {
+        name: "Tiffany Doory",
+        username: "tdoorey",
+        email: "tdoorey@lipsdontlie95.com",
+      };
+
+      let requestInit = {
+        method: "DELETE",
+        headers: { "Content-Type": "application/json" },
+      };
+
+      fetch("http://localhost:3000/users/5", requestInit)
+        .then((response) => response.json())
+        .then(() => {
+          console.log(`Successfully deleted ${user.name}`);
+        });
+    </script>
+  </body>
+</html>
